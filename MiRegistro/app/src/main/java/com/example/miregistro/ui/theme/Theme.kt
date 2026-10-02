@@ -3,35 +3,55 @@ package com.example.miregistro.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+
+private val EsquemaOscuro = darkColorScheme(
+    primary = PrimarioClaro,
+    onPrimary = PrimarioOscuro,
+    primaryContainer = PrimarioOscuro,
+    onPrimaryContainer = PrimarioClaro,
+    secondary = Secundario,
+    onSecondary = Blanco,
+    tertiary = Acento,
+    onTertiary = Blanco,
+    onBackground = TextoClaro,
+    surface = FondoOscuro,
+    onSurface = TextoClaro
+)
+private val EsquemaClaro = lightColorScheme(
+    primary = Primario,
+    onPrimary = Blanco,
+    primaryContainer = PrimarioClaro,
+    onPrimaryContainer = PrimarioOscuro,
+    secondary = Secundario,
+    onSecondary = Blanco,
+    tertiary = Acento,
+    onTertiary = Blanco,
+    onBackground = FondoOscuro,
+    surface = SuperficieClara,
+    onSurface = FondoOscuro
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+//Border Radius
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+private val Formas = Shapes(
+    small = RoundedCornerShape(size = 8.dp),
+    medium = RoundedCornerShape(size = 12.dp),
+    large = RoundedCornerShape(size = 20.dp)
 )
+
+
+
 
 @Composable
 fun MiRegistroTheme(
@@ -46,13 +66,14 @@ fun MiRegistroTheme(
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        darkTheme -> EsquemaOscuro
+        else -> EsquemaClaro
     }
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = Tipografia,
+        shapes = Formas,
         content = content
     )
 }

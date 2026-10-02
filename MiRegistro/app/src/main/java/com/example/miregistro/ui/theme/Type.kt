@@ -26,7 +26,17 @@ val Tipografia = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 15.sp,
         lineHeight = 21.sp
+    ),
+    bodyMedium = TextStyle(
+            fontFamily = FontFamily.SansSerif,
+            fontWeight = FontWeight.Normal,
+            fontSize = 15.sp,
+            lineHeight = 21.sp
+    ),
+    labelLarge = TextStyle(
+            fontFamily = FontFamily.SansSerif,
+            fontWeight = FontWeight.SemiBold,
+            fontSize = 15.sp,
+            letterSpacing = 0.3.sp
     )
-
-
 )
