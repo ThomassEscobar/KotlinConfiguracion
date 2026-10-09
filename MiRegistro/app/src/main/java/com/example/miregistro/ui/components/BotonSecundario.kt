@@ -7,9 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import cl.duocuc.miregistro.ui.styles.EstilosBoton
-import cl.duocuc.miregistro.ui.styles.estiloAltoBoton
 import cl.duocuc.miregistro.ui.theme.MiRegistroTheme
+import com.example.miregistro.ui.styles.EstilosBoton
+import com.example.miregistro.ui.styles.estiloAltoBoton
 
 // =====================================================================
 //  BotonSecundario.kt  —  Acción de menor importancia (Limpiar, Cancelar).

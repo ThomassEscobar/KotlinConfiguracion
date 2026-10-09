@@ -16,9 +16,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import cl.duocuc.miregistro.R
-import cl.duocuc.miregistro.ui.styles.EstilosBoton
-import cl.duocuc.miregistro.ui.styles.estiloAltoBoton
 import cl.duocuc.miregistro.ui.theme.MiRegistroTheme
+import com.example.miregistro.ui.styles.EstilosBoton
+import com.example.miregistro.ui.styles.estiloAltoBoton
 
 @Composable
 fun BotonPrincipal(
@@ -33,7 +33,7 @@ fun BotonPrincipal(
         modifier = modifier.estiloAltoBoton(),          // height: 52dp
         enabled = habilitado,
         shape = EstilosBoton.forma,                     // border-radius
-        colors = EstilosBoton.coloresPrincipal(),       // background / color
+        colors = EstilosBoton.coloresPrincipales(),       // background / color
         elevation = EstilosBoton.elevacion(),           // box-shadow
         contentPadding = EstilosBoton.relleno           // padding
     ) {

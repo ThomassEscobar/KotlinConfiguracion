@@ -2,20 +2,20 @@
     <string name="app_name">MiRegistro</string>
 
     <!-- Pantalla formulario -->
-    <String name="titulo_formulario">Crear cuenta</String>
-    <String name="banner_titulo">Unete a la comunidad</String>
-    <String name="banner_subtitulo">Completa tus datos en menos de un minuto</String>
-    <String name="seccion_datos">Datos personales</String>
-    <String name="seccion_preferencias">Preferencias</String>
-    <String name="campo_nombre">Nombre completo</String>
-    <String name="campo_correo">Correo electronico</String>
-    <String name="campo_contrasena">Contraseña</String>
-    <String name="etiqueta_nivel">Nivel de experiencia</String>
-    <String name="seccion_noticias">Recibir novedades por correo</String>
-    <String name="opcion_terminos">Acepto los terminos y condiciones</String>
-    <String name="btn_registro">Registrarse</String>
-    <String name="btn_limpiar">Limpiar</String>
-    <String name="registro_exitoso">Registro exitoso. Bienvenido/a %1$s</String>
+    <string name="titulo_formulario">Crear cuenta</string>
+    <string name="banner_titulo">Unete a la comunidad</string>
+    <string name="banner_subtitulo">Completa tus datos en menos de un minuto</string>
+    <string name="seccion_datos">Datos personales</string>
+    <string name="seccion_preferencias">Preferencias</string>
+    <string name="campo_nombre">Nombre completo</string>
+    <string name="campo_correo">Correo electronico</string>
+    <string name="campo_contrasena">Contraseña</string>
+    <string name="etiqueta_nivel">Nivel de experiencia</string>
+    <string name="seccion_noticias">Recibir novedades por correo</string>
+    <string name="opcion_terminos">Acepto los terminos y condiciones</string>
+    <string name="btn_registro">Registrarse</string>
+    <string name="btn_limpiar">Limpiar</string>
+    <string name="registro_exitoso">Registro exitoso. Bienvenido/a %1$s</string>
 
     <!-- % -> Manipular o mostrar variable -->
     <!-- n -> pide variable -->
@@ -27,19 +27,19 @@
 
 
     <!-- Pantalla perfil -->
-    <String name="titulo_perfil">Mi perfil</String>
-    <String name="seccion_sobre_mi">Sobre mi</String>
-    <String name="seccion_intereses">Intereses</String>
-    <String name="btn_seguir">Seguir</String>
-    <String name="btn_siguiendo">Siguiendo</String>
+    <string name="titulo_perfil">Mi perfil</string>
+    <string name="seccion_sobre_mi">Sobre mi</string>
+    <string name="seccion_intereses">Intereses</string>
+    <string name="btn_seguir">Seguir</string>
+    <string name="btn_siguiendo">Siguiendo</string>
 
 
     <!-- Descripción para accesibilidad (TalkBack) -->
-    <String name="cd_banner">Ilustración de un formulario</String>
-    <String name="cd_portada">Paisaje de montañas al atardecer</String>
-    <String name="cd_avatar">Foto de perfil</String>
-    <String name="cd_mostrar_contrasena">Mostrar contraseña</String>
-    <String name="cd_ocultar_contrasena">Ocultar contraseña</String>
+    <string name="cd_banner">Ilustración de un formulario</string>
+    <string name="cd_portada">Paisaje de montañas al atardecer</string>
+    <string name="cd_avatar">Foto de perfil</string>
+    <string name="cd_mostrar_contrasena">Mostrar contraseña</string>
+    <string name="cd_ocultar_contrasena">Ocultar contraseña</string>
 
 
 </resources>

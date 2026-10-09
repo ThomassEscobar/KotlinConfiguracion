@@ -18,9 +18,9 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import cl.duocuc.miregistro.R
-import cl.duocuc.miregistro.ui.styles.EstilosCampo
-import cl.duocuc.miregistro.ui.theme.Dimens
 import cl.duocuc.miregistro.ui.theme.MiRegistroTheme
+import com.example.miregistro.ui.styles.EstilosCampos
+import com.example.miregistro.ui.theme.Dimens
 
 // =====================================================================
 //  CampoContrasena.kt  —  Campo con puntos (••••) y botón "ojo".
@@ -71,8 +71,8 @@ fun CampoContrasena(
         supportingText = { if (error != null) Text(error) },
         singleLine = true,
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-        shape = EstilosCampo.forma,
-        colors = EstilosCampo.colores()
+        shape = EstilosCampos.forma,
+        colors = EstilosCampos.colores()
     )
 }
 

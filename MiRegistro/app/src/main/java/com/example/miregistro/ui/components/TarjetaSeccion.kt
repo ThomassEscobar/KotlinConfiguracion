@@ -13,9 +13,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import cl.duocuc.miregistro.ui.styles.EstilosTarjeta
-import cl.duocuc.miregistro.ui.theme.Dimens
 import cl.duocuc.miregistro.ui.theme.MiRegistroTheme
+import com.example.miregistro.ui.styles.EstilosTarjeta
+import com.example.miregistro.ui.theme.Dimens
 
 // =====================================================================
 //  TarjetaSeccion.kt  —  CONTENEDOR CARD CON TÍTULO + "SLOT"
