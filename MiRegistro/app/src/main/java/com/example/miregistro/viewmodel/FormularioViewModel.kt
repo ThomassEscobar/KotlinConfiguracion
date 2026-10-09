@@ -47,16 +47,20 @@ class FormularioViewModel: ViewModel(){
         val estado = _uistate.value
         //validar los campos
         val errorNombre = if (estado.nombre.isBlank())"El nombre es obligatorio" else null
-        val errorContrasena = if (estado.contrasena.lenght <6)"Minimo 6 caracteres" else null
+        val errorContrasena = if (estado.constrasena.length <6)"Minimo 6 caracteres" else null
         val errorcorreo = if(estado.correo.contains("@")|| !estado.correo.contains("."))
             "Ingrese un correo valido" else null
         val errorTerminos = if(!estado.aceptarTerminos)"Debes aceptar los terminos" else null
 
+        //verificar si existen errores
 
-
-
-
-
-
+        val hayErrores = listOf(errorNombre,errorContrasena,errorcorreo,errorTerminos).any { it!= null }
+        _uistate.update { it.copy(
+            errorNombre = errorNombre,
+            errorConstrasena = errorContrasena,
+            errorCorreo = errorcorreo,
+            errorTerminos = errorTerminos,
+            registroExitoso = !hayErrores
+        ) }
     }
 }
