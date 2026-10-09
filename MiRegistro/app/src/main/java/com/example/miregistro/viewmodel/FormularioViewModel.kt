@@ -35,6 +35,10 @@ class FormularioViewModel: ViewModel(){
     fun onNoticiasCambio(valor: Boolean){
         _uistate.update { it.copy(aceptarTerminos = valor, errorTerminos = null) }
     }
+    fun onTerminosCambio(valor: Boolean){
+        _uistate.update { it.copy(aceptarTerminos = valor, errorTerminos = null) }
+    }
+
 
     //botones
 

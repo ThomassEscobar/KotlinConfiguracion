@@ -1,23 +1,33 @@
 package com.example.miregistro.ui.screens
 
+
+
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.miregistro.R
 import com.example.miregistro.model.FormularioUistate
 import com.example.miregistro.model.NivelExperiencia
@@ -31,7 +41,35 @@ import com.example.miregistro.ui.components.ImagenEncabezado
 import com.example.miregistro.ui.components.InterruptorConTexto
 import com.example.miregistro.ui.components.TarjetaSeccion
 import com.example.miregistro.ui.theme.Dimens
+import com.example.miregistro.ui.theme.Exito
+import com.example.miregistro.ui.theme.ExitoFondo
+import com.example.miregistro.viewmodel.FormularioViewModel
+import androidx.compose.runtime.getValue
+@Composable
+fun FormularioScreen(
+    viewModel: FormularioViewModel = viewModel()
+){
+    //cada vez que el stateflow mute / redibuja pantalla
+    val uiState by viewModel.uistate.collectAsStateWithLifecycle()
 
+    FormularioContent(
+        uistate = uiState,
+        onNombreCambia = viewModel:: onNombreCambia,
+        onCorreoCambia = viewModel:: onCorreoCambia,
+        onContrasenaCambia = viewModel:: onConstrasenaCambia,
+        onAlternarVisibilidad = viewModel:: onAlternarVisibilidad,
+        onNivelSeleccionado = viewModel:: onNivelSeleccionado,
+        onNoticiasCambia = viewModel::onNoticiasCambio,
+        onTerminosCambia = viewModel::onTerminosCambio,
+        onLimpiar = viewModel:: onLimpiar,
+        onRegistrar = viewModel:: onRegistrar
+    )
+}
+
+
+
+
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FormularioContent(
     uistate: FormularioUistate,
@@ -151,11 +189,36 @@ fun FormularioContent(
                 }
                 //mensaje de exito
                 if(uistate.RegistroExitoso){
-
+                    MensajeExito(uistate.nombre)
                 }
                 Spacer(Modifier.height(Dimens.espacioGrande))
             }
         }
     }
+}
 
+//diseño para el mensaje exito
+@Composable
+private fun MensajeExito(nombre: String){
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = ExitoFondo, contentColor = Exito)
+    ) {
+        Row(
+            modifier = Modifier.padding(all = Dimens.espacioChico),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            androidx.compose.material3.Icon(
+                painter = painterResource(R.drawable.ic_check),
+                contentDescription = null,
+                tint = Exito,
+                modifier = Modifier.size(Dimens.tamanoIcono)
+            )
+            Text(
+                text = stringResource(R.string.registro_exitoso, nombre),
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(start = Dimens.espacioChico)
+            )
+        }
+    }
 }
